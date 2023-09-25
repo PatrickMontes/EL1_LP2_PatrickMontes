@@ -1,0 +1,35 @@
+package com.cibertec.demo.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.math.BigDecimal;
+
+
+@Entity
+@Table(name = "Empleados")
+public class Empleados {
+
+    private String idEmpleado;
+    private String apellidos;
+    private String nombres;
+    private int edad;
+    private String sexo;
+    private double salario;
+
+    // Constructor vacío (necesario para JPA)
+    public Empleados() {
+    }
+
+    // Getters y setters
+    
+
+    // Enumeración para el campo Sexo
+    public enum Sexo {
+        M, F
+    }
+}

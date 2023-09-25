@@ -1,0 +1,7 @@
+package com.cibertec.demo.service;
+
+import com.cibertec.interfaceService.InterfaceEmpleadoService;
+
+public class EmpleadoService implements InterfaceEmpleadoService{
+
+}

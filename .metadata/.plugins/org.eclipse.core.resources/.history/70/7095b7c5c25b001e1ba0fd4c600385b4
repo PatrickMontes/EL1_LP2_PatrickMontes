@@ -1,0 +1,12 @@
+package com.cibertec.interfaceService;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.cibertec.demo.model.Empleados;
+
+public interface InterfaceEmpleadoService {
+	public List<Empleados>listar();
+	public Optional<Empleados>listarId(String id);
+	
+}

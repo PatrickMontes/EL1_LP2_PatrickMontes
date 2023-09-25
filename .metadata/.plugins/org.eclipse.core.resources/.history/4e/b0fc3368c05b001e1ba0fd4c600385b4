@@ -1,0 +1,38 @@
+package com.cibertec.demo.model;
+
+@Entity
+@Table(name = "Empleados")
+public class Empleado {
+
+    @Id
+    @Column(name = "IdEmpleado", length = 7)
+    private String idEmpleado;
+
+    @Column(name = "Apellidos", nullable = false)
+    private String apellidos;
+
+    @Column(name = "Nombres", nullable = false)
+    private String nombres;
+
+    @Column(name = "Edad", nullable = false)
+    private int edad;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "Sexo", nullable = false, columnDefinition = "ENUM('M', 'F')")
+    private Sexo sexo;
+
+    @Column(name = "Salario", nullable = false, precision = 10, scale = 2)
+    private BigDecimal salario;
+
+    // Constructor vacío (necesario para JPA)
+    public Empleado() {
+    }
+
+    // Getters y setters
+    // Puedes generarlos automáticamente en tu IDE o escribirlos manualmente
+
+    // Enumeración para el campo Sexo
+    public enum Sexo {
+        M, F
+    }
+}

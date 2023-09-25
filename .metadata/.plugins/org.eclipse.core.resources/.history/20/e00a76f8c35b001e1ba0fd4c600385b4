@@ -1,0 +1,25 @@
+package com.cibertec.demo.controler;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cibertec.demo.model.Empleados;
+import com.cibertec.interfaceService.InterfaceEmpleadoService;
+
+@Controller
+@RequestMapping
+public class Controlador {
+	
+	@Autowired
+	private InterfaceEmpleadoService service;
+	
+	public String listar(Model model) {
+		List<Empleados>empleados=service.listar();
+		model.addAttribute("empleados", empleados);
+		return "index";
+	}
+}

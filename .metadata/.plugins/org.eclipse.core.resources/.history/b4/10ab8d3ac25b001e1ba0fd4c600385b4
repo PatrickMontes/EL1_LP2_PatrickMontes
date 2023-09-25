@@ -1,0 +1,7 @@
+package com.cibertec.interfaces;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface EmpleadosInterface extends CrudRepository<T, ID> {
+
+}

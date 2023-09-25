@@ -1,0 +1,5 @@
+package com.cibertec.demo.model;
+
+public class Empleados {
+
+}

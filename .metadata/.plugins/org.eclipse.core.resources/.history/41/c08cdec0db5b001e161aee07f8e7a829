@@ -1,0 +1,38 @@
+package com.cibertec.demo.controler;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cibertec.demo.interfaceService.InterfaceEmpleadoService;
+import com.cibertec.demo.model.Empleados;
+
+@Controller
+@RequestMapping
+public class Controlador {
+	
+	@Autowired
+	private InterfaceEmpleadoService service;
+	
+	@GetMapping("/listar")
+	public String listar(Model model) {
+	    List<Empleados> empleados = service.listar();
+	    model.addAttribute("empleados", empleados);
+	    System.out.println("Accedido al método listar"); // Agrega esta línea
+	    return "index";
+	}
+
+	@GetMapping("/new")
+	public String agregar(Model model) {
+		model.addAttribute("empleado", new Empleados());
+		return "form";
+	}
+	public String save(Model model) {
+		model.addAttribute("empleado", new Empleados());
+		return "form";
+	}
+}

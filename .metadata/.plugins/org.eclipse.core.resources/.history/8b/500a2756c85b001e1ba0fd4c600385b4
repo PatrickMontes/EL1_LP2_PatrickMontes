@@ -1,0 +1,43 @@
+package com.cibertec.demo.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cibertec.demo.model.Empleados;
+import com.cibertec.interfaceService.InterfaceEmpleadoService;
+import com.cibertec.interfaces.EmpleadosInterface;
+
+@Service
+public class EmpleadoService implements InterfaceEmpleadoService{
+
+	@Autowired
+	private EmpleadosInterface data;
+	
+	@Override
+	public List<Empleados> listar() {
+
+		return (List<Empleados>)data.findAll();
+	}
+
+	@Override
+	public Optional<Empleados> listarId(String id) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public int guardar(Empleados e) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void eliminar(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
